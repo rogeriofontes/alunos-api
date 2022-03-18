@@ -1,4 +1,4 @@
-package br.ufu.techweek.alunosapi.api.resources;
+package br.ufu.techweek.alunosapi.api.resources.v1;
 
 import br.ufu.techweek.alunosapi.model.domain.Aluno;
 import br.ufu.techweek.alunosapi.model.service.AlunoService;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/alunos")
+@RequestMapping("/api/v1/alunos")
 public class AlunoResources {
 
     @Autowired

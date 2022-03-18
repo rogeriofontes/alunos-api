@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS tb_aluno;
+/*DROP TABLE IF EXISTS tb_aluno;
 
 CREATE TABLE tb_aluno (
     id INT AUTO_INCREMENT  PRIMARY KEY,
@@ -9,4 +9,4 @@ CREATE TABLE tb_aluno (
 INSERT INTO tb_aluno (nome, curriculo_de_aluno) VALUES
 ('Rogerio', 'nonono'),
 ('Maria', 'nonono'),
-('Ze', 'nonono');
+('Ze', 'nonono');*/

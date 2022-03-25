@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  centralkondo-postgres-compose:
+    image: postgres:12
+    environment:
+      POSTGRES_PASSWORD: "Postgres2019!"
+      PGDATA: /var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    volumes:
+      - /opt/postgres/data:/var/lib/postgresql/data
+      #- ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      #- ./var:/var/lib/postgresql/data
+      #- /c/tmp/var:/var/lib/postgresql/data
+    networks:
+      - postgres-compose-network
+  centralkondo-pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "infra@unipac.com.br"
+      PGADMIN_DEFAULT_PASSWORD: "PgAdmin2019!"
+    ports:
+      - "16543:80"
+    depends_on:
+      - centralkondo-postgres-compose
+    networks:
+      - postgres-compose-network
+networks:
+  postgres-compose-network:
+    driver: bridge

@@ -46,7 +46,7 @@ public class AlunoResources {
     @ResponseBody
     public ResponseEntity<Aluno> salvar(@RequestBody Aluno aluno) {
         Aluno alunoCadastrado = alunoService.salvar(aluno);
-
+        alunoCadastrado.get
         if (alunoCadastrado != null) {
             URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(alunoCadastrado.getId()).toUri();
             return ResponseEntity.created(uri).body(alunoCadastrado);
